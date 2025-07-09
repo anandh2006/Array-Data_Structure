@@ -1,0 +1,90 @@
+✅ 1. What is an Array?
+
+An array is a collection of elements (usually of the same type) stored in a contiguous memory location. It allows indexed access, which makes it fast for lookups.
+In Python:
+    Native arrays are implemented as lists.
+    For more efficient memory storage (type-specific), Python provides the array module.
+
+📌 Example with list:
+
+# List (dynamic array)
+arr = [10, 20, 30, 40]
+print(arr[2])  # Output: 30
+
+📌 Example with array module:
+
+import array
+
+# 'i' means integer type
+arr = array.array('i', [10, 20, 30, 40])
+print(arr[2])  # Output: 30
+
+    First array: This refers to the array module itself. In Python, you typically import the array module using the statement import array. This module provides the array class, which is used to create array objects.
+
+    Second array: This is a method (or constructor) of the array class that is being called to create a new array object. The syntax array.array(...) indicates that you are calling the array constructor from the array module.
+
+
+✅ 2. Difference Between list and array Module in Python
+
+Feature	            list	                        array (from array module)
+Data types	    Can store mixed data types	    Only stores homogeneous types
+Memory usage	  Higher	                        Lower (type-specific storage)
+Speed	          Slower (more flexible)	        Faster for numeric data
+Flexibility	    More flexible	                  Less flexible
+Use case	      General-purpose collections	    Efficient numeric storage
+
+lst = [10, "hello", 3.14]  # valid list
+# arr = array.array('i', [10, "hello", 3.14])  # ❌ invalid array: all must be int
+
+✅ 3. Static vs Dynamic Arrays
+
+Type	      Static Array	            Dynamic Array (Python list)
+Size	      Fixed at compile-time	    Can grow or shrink during runtime
+Memory	    Contiguous & fixed	      Allocates more space than needed
+Language	  C/C++ arrays	            Python list, Java ArrayList, etc.
+
+Example:
+
+# Python list behaves like a dynamic array
+arr = [1, 2, 3]
+arr.append(4)  # Adding dynamically
+print(arr)     # Output: [1, 2, 3, 4]
+
+✅ 4. When and Why to Use Arrays
+
+When to use:
+    You need fast index-based access (like arr[0])
+    You work with numerical data
+    Memory efficiency is critical
+    You want to store large homogeneous datasets
+
+Why use arrays:
+    Easy access (O(1) time for index access)
+    Compact memory usage (especially with array module or NumPy)
+    Good for implementing other data structures (stacks, heaps, queues, etc.)
+
+✅ 5. Time & Space Complexity Overview
+Operation	                Time Complexity (list)	    Description
+Access	                  O(1)	                      Direct index-based access
+Insert at end	            O(1) (amortized)	          Append to list
+Insert at middle/start	  O(n)	                      Shift elements
+Delete by index	          O(n)	                      Shift required
+Search (unsorted)	        O(n)	                      Linear search
+Search (sorted)	          O(log n) (binary)	          Only if sorted manually
+
+Example:
+
+arr = [1, 2, 3, 4, 5]
+# Access
+print(arr[2])  # O(1)
+
+# Insert at start
+arr.insert(0, 0)  # O(n)
+print(arr)  # [0, 1, 2, 3, 4, 5]
+
+# Delete by index
+arr.pop(3)  # Removes 3rd index element, O(n)
+print(arr)  # [0, 1, 2, 4, 5]
+
+
+
