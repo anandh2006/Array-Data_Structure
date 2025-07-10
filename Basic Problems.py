@@ -41,6 +41,33 @@ print(arr[::-1])
     (or)
 print(list(reversed(arr)))  
 
+Check the array is sorted or not:
+
+arr = [4, 3, 5, 2, 7]
+
+is_sorted = True
+for i in range(1, len(arr)):
+    if arr[i-1] > arr[i]:
+        is_sorted = False
+        break
+
+if is_sorted:
+    print("Sorted in increasing order")
+else:
+    print("Not sorted")
+
+Count even and odd numbers
+
+arr = [1,2,3,4,5]
+even = 0
+odd = 0
+for i in range (len(arr)):
+    if arr[i]%2 == 0:
+        even += 1
+    else:
+        odd += 1
+print(even)
+print(odd)
 
         
     
