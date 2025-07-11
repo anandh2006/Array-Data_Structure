@@ -69,5 +69,33 @@ for i in range (len(arr)):
 print(even)
 print(odd)
 
+Second largest element in an array
+
+def second_largest(arr):
+    if len(arr) < 2:
+        return None  # Not enough elements
+
+    first = second = float('-inf')
+
+    for num in arr:
+        if num > first:
+            second = first
+            first = num
+        elif first > num > second:
+            second = num
+
+    return second if second != float('-inf') else None
+arr = [3, 5, 1, 9, 7]
+print("Second largest:", second_largest(arr))
+
+(or)
+
+def second_largest(arr):
+    unique = list(set(arr))
+    if len(unique) < 2:
+        return None
+    unique.sort(reverse=True)
+    return unique[1]
+
         
     
