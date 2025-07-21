@@ -97,5 +97,54 @@ def second_largest(arr):
     unique.sort(reverse=True)
     return unique[1]
 
-        
-    
+Left Rotate by 1 or d position
+
+Left Rotate by 1 Position
+
+def rotate_left_by_one(arr):
+    if len(arr) == 0:
+        return arr
+    first = arr.pop(0)
+    arr.append(first)
+    return arr
+
+arr = [1, 2, 3, 4, 5]
+rotated = rotate_left_by_one(arr)
+print(rotated)
+
+Left Rotate by d Position    
+
+def rotate_left_by_d(arr, d):
+    n = len(arr)
+    d = d % n  
+    return arr[d:] + arr[:d]
+
+arr = [1, 2, 3, 4, 5]
+d = 2
+rotated = rotate_left_by_d(arr, d)
+print(rotated)
+
+Right Rotate by 1
+
+def right_rotate_by_1(arr):
+    last = arr.pop()      
+    arr.insert(0, last)   
+    return arr
+
+arr = [1, 2, 3, 4, 5]
+print("After 1 right rotate:", right_rotate_by_1(arr))
+
+Right Rotate by d Positions
+
+def right_rotate(arr, d):
+    n = len(arr)
+    d = d % n  
+    return arr[-d:] + arr[:-d]
+
+
+arr = [1, 2, 3, 4, 5]
+d = 2
+rotated = right_rotate(arr, d)
+print("After right rotate:", rotated)
+
+
